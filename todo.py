@@ -8,10 +8,6 @@ app.secret_key = 'aV3rYs3crE+key'
 dict_user = {}
 dict_task = {}
 
-@app.route('/')
-def success():
-    return 'Welcome, %s!' % session['username']
-
 @app.route('/register', methods=['POST'])
 def register():
     username = request.form['username']
@@ -31,7 +27,7 @@ def login():
 
     if verify_credentials(username, password):
         session['username'] = username
-        return redirect(url_for('success')) # TODO: Return access token
+        return jsonify('Login success') # TODO: Return access token
 
     return jsonify('Incorrect username / password'), 403
 
