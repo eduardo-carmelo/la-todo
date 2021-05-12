@@ -28,7 +28,6 @@ def login():
     if verify_credentials(username, password):
         session['username'] = username
         return jsonify('Login success') # TODO: Return access token
-
     return jsonify('Incorrect username / password'), 403
 
 @app.route('/task', methods=['GET', 'POST', 'PUT', 'DELETE'])
