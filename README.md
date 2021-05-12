@@ -13,3 +13,44 @@ Instructions:
     b. (Linux) export FLASK_APP = "todo.py"
     c. (Powershell) $env:FLASK_APP = "todo.py"
 4. Execute "flask run"
+
+End points:
+1. /register
+
+POST
+Parameters:
+username
+password
+
+2. /login
+
+POST
+Parameters:
+username
+password
+
+3. /task
+
+GET
+Return:
+Lists all tasks of current user
+
+POST
+Parameters:
+task_name - Task to add
+
+PUT
+Parameters:
+task_name_prev - Task to update
+task_name_new - Updated task name
+
+DELETE
+Parameters:
+task_name - Task to delete
+
+4. /task/move
+
+PUT
+Parameters:
+task_name - Task to move
+index - New position to move to
